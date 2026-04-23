@@ -1,1 +1,10 @@
-FILL
+name: 'SBOM Generation and Scanning'
+description: 'Generates a Software Bill of Materials (SBOM) and scans for known vulnerabilities failing on any critial vulnerabilities'
+author: 'sahplaM@'
+outputs:
+  sbom-file:
+    description: ''
+    value: ${{ steps.sbom-gen-and-scan.outputs.sbom-file }}
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
