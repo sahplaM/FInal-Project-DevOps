@@ -15,7 +15,7 @@ jobs:
         env:
           DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
         run: |
-          echo "$DJANDO_SECRET_KEY"
+          echo "$DJANGO_SECRET_KEY"
           docker run -d -p 8000:8000 -e 'DJANGO_SECRET_KEY="$DJANGO_SECRET_KEY"' pipeline-test
       - name: curl_ftw
         run: |
