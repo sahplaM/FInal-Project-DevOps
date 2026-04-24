@@ -3,7 +3,7 @@ description: 'Generates a Software Bill of Materials (SBOM) and scans for known 
 author: 'sahplaM@'
 outputs:
   sbom-file:
-    description: ''
+    description: 'The syft generated SBOM'
     value: ${{ steps.sbom-gen-and-scan.outputs.sbom-file }}
 runs:
   using: 'docker'
