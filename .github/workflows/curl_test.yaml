@@ -15,7 +15,6 @@ jobs:
         env:
           DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
         run: |
-          echo "$DJANGO_SECRET_KEY"
           docker run -d -p 8000:8000 -e 'DJANGO_SECRET_KEY="$DJANGO_SECRET_KEY"' pipeline-test
       - name: curl_ftw
         run: |
@@ -60,8 +59,8 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - name: docker_build_tag_push
         env:
-          ARM_CLIENT_ID: ${{ }}
-          ARM_CLIENT_SECRET: ${{ }}
+          ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+          ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
         run: |
           docker build -t application-final .
           docker tag application-final acrjzamoraacmp2400.azurecr.io/final
