@@ -49,5 +49,5 @@ jobs:
         ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
         ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
         ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-        STATE_KEY: 'sahplaM'
+        STATE_KEY: 'jzamora'
         TF_STAGE: 'stage1'
