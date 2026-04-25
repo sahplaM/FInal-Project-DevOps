@@ -19,7 +19,7 @@ provider "azurerm" {
 
 resource "azurerm_container_registry" "jzamora-acr" {
   name = "acrjzamoraacmp2400"
-  resource_group_name = "rg-student"
+  resource_group_name = "rg-jzamora"
   location = "Central US"
   sku = "Basic"
   admin_enabled = false
