@@ -6,9 +6,21 @@ terraform {
     }
   }
   backend "azurem" {
-    resource_group_name = 
+    resource_group_name = "rg-acmp-final"
+    storage_account_name = "acmp2400storageaccount"
+    container_name = "big-tf-state-acmp2400"
+    use_azuread_auth = true
+  }
 }
 
 provider "azurerm" {
-  # Configuration options
+  features {}
+}
+
+resource "azurerm_container_registry" "jzamora-acr" {
+  name = "acrjzamoraacmp2400"
+  resource_group_name = "rg-jzamora"
+  location = "Central US"
+  sku = "Basic"
+  admin_enabled = false
 }
