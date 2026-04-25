@@ -4,8 +4,10 @@ RUN apt -get update && apt -get install —no-install-recommends -y curl ca-cert
 	curl -sSfL https://get.anchore.io/syft | sh -s — -b /usr/local/bin && \
 	curl -sSfL https://get.anchore.io/grype | sh -s — -b /usr/local/bin
 
-COPY requirements.txt .
+WORKDIR /app
 
 COPY entrypoint.sh .
 
-CMD [“bash”, “entrypoint.sh”]
+RUN chmod +x entrypoint.sh
+
+ENTRYPOINT ["/app/entrypoint.sh"]
