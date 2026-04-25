@@ -7,8 +7,10 @@ export ARM_TENANT_ID=${INPUT_ARM_TENANT_ID}
 export STATE_KEY=${INPUT_STATE_KEY}
 export TF_STAGE=${INPUT_TF_STAGE}
 
-cd /github/workspace/stage1
+cd /github/workspace/${TF_STAGE}
 
-terraform init
+terraform init -input=false -reconfigure \
+  -backend-config="key=${STATE_KEY}"
+
 terraform plan
 terraform apply --auto-approve
