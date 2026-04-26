@@ -34,7 +34,7 @@ resource "azurerm_container_group" "jzamora-aci" {
   location            = "Central US"
   resource_group_name = "rg-jzamora-raya"
   ip_address_type     = "Public"
-  dns_name_label      = "aci-jzamora-acmp"
+  dns_name_label      = "acmp-jzamora-instance"
   os_type             = "Linux"
 
   container {
