@@ -101,6 +101,7 @@ jobs:
 
   tf-stage3:
     needs: pre-val
+    if: always()
     runs-on: ubuntu-latest
     steps:
     - name: get_code
