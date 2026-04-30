@@ -52,7 +52,7 @@ jobs:
         TF_STAGE: 'stage1'
 
   build-tag-push:
-    needs: terraform-stage-1
+    needs: tf-stage-1
     runs-on: ubuntu-latest
     steps:
       - name: get_code
@@ -105,7 +105,7 @@ jobs:
     steps:
     - name: get_code
       uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-    - name: tf-stage-3
+    - name: terraform-stage-3
       uses: ./.github/actions/terraform
       with:
         ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
